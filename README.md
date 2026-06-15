@@ -9,7 +9,7 @@ The application automates the student enrollment process and provides analytical
 
 * CRM Customization Features
 
-## Custom Objects
+## Custom Objects & Fields
 Created Custom Objects:
 
 * Student 
@@ -19,7 +19,7 @@ Created Custom Objects:
 * Enrollment
 
 Fields Created
-## Student Object
+### Student Object
 
 | Field Name | Data Type |
 |------------|------------|
@@ -27,15 +27,48 @@ Fields Created
 | Name | Text |
 | Email | Email |
 | Phone | Phone |
-| Department | Picklist(Computer Engineering, Civil Engineering, Mechanical Engineering, Electrical Engineering, Electrical Engineering, Electronics Engineering, Information Technology)|
-| Category | Picklist (Open, OBC, SC, ST, EWS) |
+| Department | Picklist |
+| Category | Picklist |
 | Semester | Picklist  |
 | Scholarship Percentage | Number |
 | Graduation Year | Number |
-| Status | Picklist (New, Enrolled, Active) |
+| Status | Picklist |
 | City | Text | 
 | Date of Birth | Date |
 |Admission Year | Number | 
+
+### Department Values
+- Computer Engineering
+- Civil Engineering
+- Mechanical Engineering
+- Electrical Engineering
+- Electronics Engineering
+- Information Technology
+
+### Category Values
+- Open
+- OBC
+- SC
+- ST
+- EWS
+
+### Semester Values
+- Semester 1
+- Semester 2
+- Semester 3
+- Semester 4
+- Semester 5
+- Semester 6
+- Semester 7
+- Semester 8
+ 
+### Status Values
+- New
+- Enrolled
+- Active
+- Placed
+- Graduated
+- Dropped
 
 ## Course Object
 
@@ -45,7 +78,13 @@ Fields Created
 | Course Name | Text |
 | Duration Months | Number |
 | Fees | Currency |
-| Type | Picklist (Core, Elective, Laboratory, Project) |
+| Type | Picklist |
+
+### Type Values
+- Core
+- Elective
+- Laboratory
+- Project 
 
 ## Enrollment Object
 
@@ -53,10 +92,14 @@ Fields Created
 |------------|------------|
 | Enrollment ID | Auto Number |
 | Enrollment Date | Date |
-| Payment Status | Picklist (Pending, Partially Paid, Paid) |
+| Payment Status | Picklist |
 | Student | Master-Detail(Student) |
 | Course | Master-Detail(Course) |
 
+### Payment Status Values 
+- Pending
+- Partially Paid
+- Paid
 
 ## Validation Rules
 
@@ -71,6 +114,7 @@ Fields Created
 
 ### Enrollment Object
 - Enrollment Date Validation – Prevents future enrollment dates.
+  
 ## Record Types
 
 Record Types were implemented on the Student object to support different categories of students and allow future customization of business processes, page layouts, and picklist values.
@@ -79,14 +123,6 @@ Record Types were implemented on the Student object to support different categor
 
 1. Undergraduate
 2. Postgraduate
-
-### Purpose
-
-* Differentiate undergraduate and postgraduate students.
-* Support future customization of admission processes.
-* Allow separate page layouts and picklist values if required.
-* Improve data organization and scalability.
-
 
 ## Flow Automation
 
@@ -108,15 +144,6 @@ When the Payment Status is marked as **Paid**, the related Student record is aut
 
 When the Payment Status is marked as **Paid**, an enrollment confirmation email is automatically sent to the student.
 
-#### Business Benefits
-
-* Eliminates manual updates to student records.
-* Ensures accurate enrollment tracking.
-* Improves communication through automated email notifications.
-* Reduces administrative effort and human error.
-
-
-## Reports & Dashboard            
 
 ## Reports & Dashboard
 
@@ -130,7 +157,7 @@ When the Payment Status is marked as **Paid**, an enrollment confirmation email 
 
 ### Dashboard
 
-A Student Management Dashboard was created to visualize enrollment and student data using:
+A Student Management Dashboard was created to provide visual insights into student enrollment, payment status, department distribution, category distribution, and semester-wise student data.
 
 * Students Per Course
 * Enrollments by Payment Status
@@ -151,4 +178,5 @@ A Student Management Dashboard was created to visualize enrollment and student d
 * Email Automation
 * Reports & Dashboards
 * CRM Concepts
+
 
